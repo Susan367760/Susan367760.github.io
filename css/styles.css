@@ -1,0 +1,84 @@
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and header styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Container and section styling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box {
+    flex: 1;
+    min-width: 300px; /* Ensures a minimum width for smaller screens */
+    padding: 20px;
+    border: 1px solid black;
+    position: relative;
+    background-color: #f0f0f0; /* Default background color for sections */
+    /* Ensure content doesn't overlap the title */
+    padding-top: 40px;
+}
+
+/* Title styling */
+.box .title {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff; /* Background color for title */
+    padding: 5px;
+    border: 1px solid black;
+    /* Text color */
+    color: black;
+    /* Set different colors for each title */
+}
+
+.box:nth-child(1) .title {
+    background-color: #ff9999; /* Pink background for Chicken */
+}
+
+.box:nth-child(2) .title {
+    background-color: #99ff99; /* Light green background for Beef */
+}
+
+.box:nth-child(3) .title {
+    background-color: #9999ff; /* Light blue background for Sushi */
+}
+
+/* Media queries */
+@media (min-width: 992px) {
+    .box {
+        width: 33.33%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .box {
+        width: 100%;
+    }
+    .box:nth-child(1), .box:nth-child(2) {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (max-width: 767px) {
+    .box {
+        width: 100%;
+        float: none;
+    }
+}
